@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bakery Menu</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Lavishly+Yours&display=swap" rel="stylesheet">
+  <style>
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: #fff8f5;
+      color: #333;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+       background: linear-gradient(90deg, #fc8d8df6, #cb4f4f);
+      padding: 15px 20px;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar h1 { margin: 0; font-size: 2rem;  font-family: "Lavishly Yours", cursive; }
+    .menu { display: flex; gap: 20px; }
+    .menu a { text-decoration: none; color: white; font-weight: 500; position: relative; }
+    .menu a:hover { color: #ffd6d6; }
+
+    section { padding: 50px 20px; text-align: center; }
+    section h2 { color: #cb4f4f; margin-bottom: 20px; }
+
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; padding: 20px; }
+    .card { background: white; border-radius: 12px; padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.2s ease; text-align: center; }
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 10px; }
+    .card h3 { margin: 10px 0 5px; color: #444; }
+    .price { color: #cb4f4f; font-weight: bold; font-size: 1.1rem; }
+
+    @media (max-width: 768px) {
+      .menu { display: none; flex-direction: column; background: #cb4f4f; position: absolute; top: 60px; right: 0; width: 200px; padding: 10px; border-radius: 0 0 8px 8px; }
+      .menu.active { display: flex; }
+      .hamburger { display: block; cursor: pointer; }
+    }
+    .hamburger { display: none; font-size: 26px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<nav class="navbar">
+  <!-- Logo -->
+  <a href="./index.html" class="nav-logo">Bake Haven</a>
+
+  <!-- Hamburger for mobile -->
+  <div class="hamburger">☰</div>
+
+  <!-- Menu -->
+  <ul class="nav-menu">
+    <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
+    <li class="nav-item"><a href="#cakes" class="nav-link">Cakes</a></li>
+    <li class="nav-item"><a href="#pastries" class="nav-link">Pastries</a></li>
+    <li class="nav-item"><a href="#breads" class="nav-link">Breads</a></li>
+    <li class="nav-item"><a href="#savouries" class="nav-link">Savouries</a></li>
+    <li class="nav-item"><a href="#beverages" class="nav-link">Beverages</a></li>
+    <li class="nav-item"><a href="./order.html" class="nav-link">Order</a></li>
+    <li class="nav-item"><a href="./about.html" class="nav-link">About Us</a></li>
+  </ul>
+</nav>
+
+<section id="cakes">
+  <h2>Our Cakes</h2>
+  <div class="grid">
+    <div class="card"><img src="birthday cake.jpeg" alt="Birthday Cake"><h3>Birthday Cake</h3><p class="price">₹800</p></div>
+    <div class="card"><img src="wed.jpg" alt="Wedding Cake"><h3>Wedding Cake</h3><p class="price">₹2500</p></div>
+    <div class="card"><img src="chesse.jpg" alt="Cheesecake"><h3>Cheesecake</h3><p class="price">₹600</p></div>
+    <div class="card"><img src="cup.jpg" alt="Cupcakes"><h3>Cupcakes (6 pcs)</h3><p class="price">₹350</p></div>
+    <div class="card"><img src="vegan.jpg" alt="Vegan Cake"><h3>Eggless & Vegan Cake</h3><p class="price">₹900</p></div>
+  </div>
+</section>
+
+<section id="pastries">
+  <h2>Pastries & Desserts</h2>
+  <div class="grid">
+    <div class="card"><img src="cro.jpg" alt="Croissant"><h3>Croissant</h3><p class="price">₹120</p></div>
+    <div class="card"><img src="ec.jpg" alt="Eclair"><h3>Éclair</h3><p class="price">₹150</p></div>
+    <div class="card"><img src="tart.jpg" alt="Tart"><h3>Tart & Pie</h3><p class="price">₹200</p></div>
+    <div class="card"><img src="brownie.jpg" alt="Brownie"><h3>Brownie</h3><p class="price">₹100</p></div>
+  </div>
+</section>
+
+<section id="breads">
+  <h2>Breads</h2>
+  <div class="grid">
+    <div class="card"><img src="loaf.jpg" alt="Fresh Loaf"><h3>Fresh Loaf</h3><p class="price">₹60</p></div>
+    <div class="card"><img src="bun.jpg" alt="Buns"><h3>Buns & Rolls</h3><p class="price">₹50</p></div>
+    <div class="card"><img src="garlic.jpg" alt="Garlic Bread"><h3>Garlic Bread</h3><p class="price">₹120</p></div>
+  </div>
+</section>
+
+<section id="savouries">
+  <h2>Savouries</h2>
+  <div class="grid">
+    <div class="card"><img src="patt.jpg" alt="Puff"><h3>Puffs & Patties</h3><p class="price">₹40</p></div>
+    <div class="card"><img src="q.jpg" alt="Quiche"><h3>Quiche</h3><p class="price">₹150</p></div>
+    <div class="card"><img src="sandwich.jpg" alt="Sandwich"><h3>Sandwich</h3><p class="price">₹100</p></div>
+  </div>
+</section>
+
+<section id="beverages">
+  <h2>Beverages</h2>
+  <div class="grid">
+    <div class="card"><img src="tea.jpg" alt="Coffee"><h3>Coffee & Tea</h3><p class="price">₹80</p></div>
+    <div class="card"><img src="shake.jpg" alt="Milkshake"><h3>Milkshake</h3><p class="price">₹150</p></div>
+    <div class="card"><img src="cold.jpg" alt="Cold Coffee"><h3>Cold Coffee</h3><p class="price">₹120</p></div>
+  </div>
+</section>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const menu = document.querySelector(".menu");
+  hamburger.addEventListener("click", () => { menu.classList.toggle("active"); });
+</script>
+
+</body>
+</html>
+
+

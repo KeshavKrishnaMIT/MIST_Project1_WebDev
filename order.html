@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order - Cakes Bakery</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Lavishly+Yours&display=swap" rel="stylesheet">
+
+<style>
+  .order-form-section {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 20px;
+  }
+  .category {
+    margin-bottom: 20px;
+  }
+  .category h3 {
+    margin-bottom: 10px;
+    color: #d24d57;
+  }
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffc0cb33;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+  }
+  .item-name {
+    flex: 1;
+  }
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .quantity-controls button {
+    padding: 5px 10px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .quantity-controls input {
+    width: 40px;
+    text-align: center;
+  }
+  #totalPrice {
+    margin-top: 20px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  #orderAlert {
+    display:none; 
+    position:fixed; 
+    top:20px; 
+    right:20px; 
+    background:#ff6b6b; 
+    color:white; 
+    padding:15px 20px; 
+    border-radius:8px; 
+    box-shadow:0 4px 6px rgba(0,0,0,0.2); 
+    z-index:1000;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <a href="./index.html" class="nav-logo">Bake Haven</a>
+    <ul class="nav-menu">
+      <li class="nav-item"><a href="./index.html" class="nav-link">Home</a></li>
+      <li class="nav-item"><a href="./menu.html" class="nav-link">Menu</a></li>
+      <li class="nav-item"><a href="./order.html" class="nav-link active">Order</a></li>
+      <li class="nav-item"><a href="./about.html" class="nav-link">About Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="order-page-hero">
+  <div class="order-page-content">
+    <h1>Order Your Cake</h1>
+    <p>Fill the form below to place your order with Bake Haven</p>
+  </div>
+</section>
+
+<section class="order-form-section">
+  <h2>Place Your Order</h2>
+  <form class="order-form">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <!-- Categories -->
+    <div class="category" data-category="Cakes">
+      <h3>🍰 Cakes</h3>
+      <div class="item" data-price="500"><span class="item-name">Birthday Cakes – ₹500</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="1500"><span class="item-name">Wedding & Custom Cakes – ₹1500</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="600"><span class="item-name">Cheesecakes – ₹600</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="120"><span class="item-name">Cupcakes & Mini Cakes – ₹120</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="550"><span class="item-name">Eggless & Vegan Cakes – ₹550</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="category" data-category="Pastries">
+      <h3>🥐 Pastries & Desserts</h3>
+      <div class="item" data-price="80"><span class="item-name">Croissants – ₹80</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="100"><span class="item-name">Eclairs – ₹100</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="150"><span class="item-name">Tarts & Pies – ₹150</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="120"><span class="item-name">Brownies – ₹120</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="category" data-category="Breads">
+      <h3>🍞 Breads</h3>
+      <div class="item" data-price="90"><span class="item-name">Fresh Loaves – ₹90</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="40"><span class="item-name">Buns & Rolls – ₹40</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="120"><span class="item-name">Garlic Bread / Focaccia – ₹120</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="category" data-category="Savouries">
+      <h3>🥧 Savouries</h3>
+      <div class="item" data-price="80"><span class="item-name">Puffs & Patties – ₹80</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="150"><span class="item-name">Sandwiches – ₹150</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="category" data-category="Beverages">
+      <h3>☕ Beverages</h3>
+      <div class="item" data-price="60"><span class="item-name">Coffee & Tea – ₹60</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+      <div class="item" data-price="120"><span class="item-name">Milkshakes / Cold Coffee – ₹120</span>
+        <div class="quantity-controls">
+          <button type="button" class="minus">-</button>
+          <input type="number" value="0" min="0">
+          <button type="button" class="plus">+</button>
+        </div>
+      </div>
+    </div>
+
+    <label for="totalPrice">Total Price (₹):</label>
+    <input type="text" id="totalPrice" value="0" readonly>
+
+    <label for="message">Special Message:</label>
+    <input type="text" id="message" name="message">
+
+    <button type="submit">Submit Order</button>
+  </form>
+</section>
+
+<div id="orderAlert">Order placed successfully!</div>
+
+<script>
+const form = document.querySelector('.order-form');
+const alertBox = document.getElementById('orderAlert');
+const totalInput = document.getElementById('totalPrice');
+
+// Quantity controls
+document.querySelectorAll('.item').forEach(item => {
+  const plus = item.querySelector('.plus');
+  const minus = item.querySelector('.minus');
+  const qtyInput = item.querySelector('input');
+  const price = parseInt(item.dataset.price);
+
+  plus.addEventListener('click', () => {
+    qtyInput.value = parseInt(qtyInput.value) + 1;
+    updateTotal();
+  });
+  minus.addEventListener('click', () => {
+    if(qtyInput.value > 0) qtyInput.value = parseInt(qtyInput.value) - 1;
+    updateTotal();
+  });
+});
+
+function updateTotal() {
+  let total = 0;
+  document.querySelectorAll('.item').forEach(item => {
+    const qty = parseInt(item.querySelector('input').value);
+    const price = parseInt(item.dataset.price);
+    total += qty * price;
+  });
+  totalInput.value = total;
+}
+
+// Submit order
+form.addEventListener('submit', function(e) {
+  e.preventDefault();
+  alertBox.style.display = 'block';
+  setTimeout(() => {
+    alertBox.style.display = 'none';
+  }, 4000);
+  form.reset();
+  updateTotal();
+});
+</script>
+
+</body>
+</html>
+
+
+
